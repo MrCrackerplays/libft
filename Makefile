@@ -1,5 +1,5 @@
 NAME = Libft
-#OBJ_FILES = 
+OBJ_FILES = main_isalpha.o ft_isalpha.o ft_isalnum.o ft_isascii.o ft_tolower.o ft_toupper.o
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Werror -Wextra
 
