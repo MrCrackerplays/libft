@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   ft_strlcat.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/28 14:21:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/28 16:06:15 by pdruart       ########   odam.nl         */
+/*   Created: 2020/10/28 15:09:39 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/10/28 16:06:45 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "stdlib.h"
+#include "libft.h"
 
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isascii(int c);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-char	*ft_strlcat(char *dst, const char *src, size_t dstsize);
-#endif
+char	*ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	int	i;
+
+	i = 0;
+	while (dst[i] != '\0')
+	{
+		
+		i++;
+	}
+	dst[i-1] = '\0';
+	return (dst);
+}

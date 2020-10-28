@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   main_isdigit.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/28 14:21:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/28 16:06:15 by pdruart       ########   odam.nl         */
+/*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/10/28 13:42:48 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "stdlib.h"
+#include "libft.h"
+#include "unistd.h"
+#include "ctype.h"
 
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isascii(int c);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-char	*ft_strlcat(char *dst, const char *src, size_t dstsize);
-#endif
+int	main(void)
+{
+	char *word;
+	char c;
+	char d;
+	char *word1;
+	char *word2;
+
+	word = "äpÖPஇeL16!#!$S";
+	word1 = word;
+	word2 = word;
+	while (*word1 != '\0')
+	{
+		c = '0' + ft_isdigit(*word1);
+		d = '0' + isdigit(*word2);
+		write(1, &d, 1);
+		if (c != d)
+			write(1, "\nnot the same\n", 14);
+		word1++;
+		word2++;
+	}
+}

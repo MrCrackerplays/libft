@@ -6,13 +6,13 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 13:35:34 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/27 15:19:05 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/10/28 13:59:59 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ('A' <= c && c <= 'Z')
 		return (1);

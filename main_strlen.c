@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   main_strlen.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/28 14:21:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/28 16:06:15 by pdruart       ########   odam.nl         */
+/*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/10/28 14:59:22 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "stdlib.h"
+#include "libft.h"
+#include "unistd.h"
+#include "string.h"
 
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isascii(int c);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-char	*ft_strlcat(char *dst, const char *src, size_t dstsize);
-#endif
+int main(void)
+{
+	char *word;
+	int c;
+	int d;
+	char *word1;
+	char *word2;
+
+	word = "äpÖPஇeL16!#!$S";
+	word1 = word;
+	word2 = word;
+	c = ft_strlen(word1);
+	d = strlen(word2);
+	if (c != d)
+		write(1, "not the same\n", 13);
+	else
+		write(1, "are the same\n", 13);
+}
