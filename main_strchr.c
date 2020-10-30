@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main_strlen.c                                      :+:    :+:            */
+/*   main_strchr.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/30 12:29:55 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/10/30 12:55:49 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 
 int	main(void)
 {
-	char	*word;
-	int		c;
-	int		d;
-	char	*word1;
-	char	*word2;
+	char *word;
+	char *c;
+	char *d;
+	char *word1;
+	char *word2;
+	char to_find;
 
-	word = "äpÖPஇeL16!#!$S";
+	word = "äpSeÖPஇeL16!#!$eS";
 	word1 = word;
 	word2 = word;
-	c = ft_strlen(word1);
-	d = strlen(word2);
+	to_find = 'e';
+	c = ft_strchr(word1, to_find);
+	d = strchr(word2, to_find);
 	if (c != d)
 		write(1, "not the same\n", 13);
 	else

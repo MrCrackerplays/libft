@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main_strlen.c                                      :+:    :+:            */
+/*   ft_strchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/30 12:29:55 by pdruart       ########   odam.nl         */
+/*   Created: 2020/10/30 12:02:52 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/10/30 12:51:01 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "unistd.h"
-#include "string.h"
 
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*word;
-	int		c;
-	int		d;
-	char	*word1;
-	char	*word2;
+	char	*result;
 
-	word = "äpÖPஇeL16!#!$S";
-	word1 = word;
-	word2 = word;
-	c = ft_strlen(word1);
-	d = strlen(word2);
-	if (c != d)
-		write(1, "not the same\n", 13);
-	else
-		write(1, "are the same\n", 13);
+	result = NULL;
+	while (*s != '\0' && *s != c)
+		s++;
+	if (*s == c)
+		result = (char *)s;
+	return (result);
 }
