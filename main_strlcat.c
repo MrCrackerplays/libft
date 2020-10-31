@@ -6,45 +6,36 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/30 12:01:20 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/10/31 19:02:54 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "unistd.h"
 #include "string.h"
 
-int	main(void)
+int		main(void)
 {
-	char *word;
-	int c;
-	int i;
-	int d;
-	char word1[12];
-	char *word2;
+	int		c;
+	int		d;
+	char	word1[15];
+	char	word3[15];
+	char	*word2;
 
-//	word = "äpÖPஇeL16!#!$S";
-	i = 0;
-	word = "peertjes\0";
-	while (word[i] != '\0' && i < 12)
-	{
-		word1[i] = word[i];
-		i++;
-	}
-	word1[i] = '\0';
-	word2 = "banaan";
-	d = 12;
-	i = 0;
-	while (word1[i] != '\0' && i < 12)
-	{
-		write(1, &word1[i], 1);
-		i++;
-	}
-	write(1, "\n\n", 2);
-	c = strlcat(word1, word2, d);
-	i = 0;
-	while (word1[i] != '\0' && i < 12)
-	{
-		write(1, &word1[i], 1);
-		i++;
-	}
+	word2 = "peer";
+	c = -1;
+	while (word2[++c] != '\0')
+		word1[c] = word2[c];
+	word1[c] = '\0';
+	c = -1;
+	while (word2[++c] != '\0')
+		word3[c] = word2[c];
+	word3[c] = '\0';
+	word2 = "bananas";
+	c = ft_strlcat(word1, word2, 8);
+	d = strlcat(word3, word2, 8);
+	if (c != d)
+		write(1, "not the same\n", 13);
+	else
+		write(1, "are the same\n", 13);
 }

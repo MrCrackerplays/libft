@@ -6,22 +6,26 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:09:39 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/30 12:01:47 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/10/31 18:48:15 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-// not done yet, don't forget
+	unsigned int	i;
+	unsigned int	dstlen;
+
 	i = 0;
-	while (dst[i] != '\0')
+	dstlen = ft_strlen(dst);
+	while (i < dstsize - dstlen - 1)
 	{
-		
+		dst[i + dstlen] = src[i];
 		i++;
 	}
-	dst[i-1] = '\0';
-	return (dst);
+	dst[i + dstlen] = src[i];
+	if (dstsize != 0 && dstlen <= dstsize)
+		dst[dstsize - 1] = '\0';
+	return (dstlen + ft_strlen(src));
 }

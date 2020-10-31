@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main_strchr.c                                      :+:    :+:            */
+/*   main_strrchr.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/31 16:47:46 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/10/31 16:53:00 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(void)
 
 	word = "äpSeÖPஇeL16!#!$eS";
 	to_find = 'e';
-	c = ft_strchr(word, to_find);
-	d = strchr(word, to_find);
+	c = ft_strrchr(word, to_find);
+	d = strrchr(word, to_find);
 	if (c != d)
 		write(1, "not the same\n", 13);
 	else
