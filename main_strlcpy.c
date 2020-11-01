@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main_strlcat.c                                     :+:    :+:            */
+/*   main_strlcpy.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/01 16:19:28 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/01 16:19:02 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int		main(void)
 		word3[c] = word2[c];
 	word3[c] = '\0';
 	word2 = "bananas";
-	c = ft_strlcat(word1, word2, 8);
-	d = strlcat(word3, word2, 8);
+	c = ft_strlcpy(word1, word2, 8);
+	d = strlcpy(word3, word2, 8);
 	if (c != d)
 		write(1, "not the same\n", 13);
 	else
