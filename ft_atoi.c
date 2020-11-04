@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main_strrchr.c                                     :+:    :+:            */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/04 12:07:56 by pdruart       ########   odam.nl         */
+/*   Created: 2020/11/04 13:07:15 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/11/04 13:51:16 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "unistd.h"
-#include "string.h"
 
-int	main(void)
+int	ft_atoi(const char *str)
 {
-	char *word;
-	char *c;
-	char *d;
-	char to_find;
+	int		val;
+	int		i;
+	int		neg;
 
-	word = "bonjour";
-	to_find = 'b';
-	c = ft_strrchr(word, to_find);
-	d = strrchr(word, to_find);
-	if (c != d)
-		write(1, "not the same\n", 13);
-	else
-		write(1, "are the same\n", 13);
+	i = 0;
+	val = 0;
+	neg = 0;
+	while (str[i] != '\0')
+	{
+		if (i == 0 && str[i] == '-')
+			neg++;
+		else if (ft_isdigit(str[i]))
+		{
+			val *= 10;
+			val += (str[i] - '0');
+		}
+		else
+			break ;
+		i++;
+	}
+	if (neg)
+		val = -val;
+	return (val);
 }

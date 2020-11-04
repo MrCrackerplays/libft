@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main_strrchr.c                                     :+:    :+:            */
+/*   ft_memcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 16:06:25 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/04 12:07:56 by pdruart       ########   odam.nl         */
+/*   Created: 2020/11/04 16:26:07 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/11/04 17:19:45 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "unistd.h"
-#include "string.h"
 
-int	main(void)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	char *word;
-	char *c;
-	char *d;
-	char to_find;
+	char	*l;
+	char	*r;
+	size_t	i;
 
-	word = "bonjour";
-	to_find = 'b';
-	c = ft_strrchr(word, to_find);
-	d = strrchr(word, to_find);
-	if (c != d)
-		write(1, "not the same\n", 13);
-	else
-		write(1, "are the same\n", 13);
+	l = (char *)dst;
+	r = (char *)src;
+	i = 0;
+	while (i < n)
+	{
+		l[i] = r[i];
+		i++;
+	}
+	return (dst);
 }

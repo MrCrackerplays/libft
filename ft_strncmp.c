@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 16:22:43 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/01 19:05:20 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/04 12:36:24 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
-
+//errors
 	i = 0;
 	while (i < n && s1[i] != '\0')
 	{

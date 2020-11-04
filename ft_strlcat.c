@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:09:39 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/10/31 18:48:15 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/04 12:37:01 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
 	unsigned int	dstlen;
-
+//errors
 	i = 0;
 	dstlen = ft_strlen(dst);
 	while (i < dstsize - dstlen - 1)
