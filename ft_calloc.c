@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   ft_calloc.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/06 15:58:29 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/07 16:08:08 by pdruart       ########   odam.nl         */
+/*   Created: 2020/11/07 17:00:45 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/11/07 19:09:45 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "errno.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
-	char	str[len];
-	char	*chrdst;
-	char	*chrsrc;
+	char	*ptr;
 
 	i = 0;
-	chrsrc = (char *)src;
-	while (i < len)
+	if ((ptr = malloc(count * size)) == NULL)
 	{
-		str[i] = *chrsrc;
-		i++;
-		chrsrc++;
+		errno = ENOMEM;
+		return (NULL);
 	}
-	i = 0;
-	chrdst = (char *)dst;
-	while (i < len)
+	while (i < count * size)
 	{
-		*chrdst = str[i];
+		ptr[i] = 0;
 		i++;
-		chrdst++;
 	}
-	return (dst);
+	return (ptr);
 }

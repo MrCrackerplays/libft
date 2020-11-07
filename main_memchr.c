@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   main_memchr.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/06 15:58:29 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/07 16:08:08 by pdruart       ########   odam.nl         */
+/*   Created: 2020/11/07 16:07:03 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/11/07 16:42:08 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "unistd.h"
+#include "string.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		main(void)
 {
-	size_t	i;
-	char	str[len];
-	char	*chrdst;
-	char	*chrsrc;
+	char	*a;
+	void	*c;
+	void	*d;
 
-	i = 0;
-	chrsrc = (char *)src;
-	while (i < len)
-	{
-		str[i] = *chrsrc;
-		i++;
-		chrsrc++;
-	}
-	i = 0;
-	chrdst = (char *)dst;
-	while (i < len)
-	{
-		*chrdst = str[i];
-		i++;
-		chrdst++;
-	}
-	return (dst);
+	a = "äpÖPஇeL16!#!$S";
+	c = ft_memchr(a, 'e', 2);
+	d = memchr(a, 'e', 2);
+	write(1, c, 1);
+	if (c != d)
+		write(1, "not the same\n", 13);
+	else
+		write(1, "are the same\n", 13);
 }

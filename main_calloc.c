@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   main_calloc.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/06 15:58:29 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/07 16:08:08 by pdruart       ########   odam.nl         */
+/*   Created: 2020/11/07 17:28:04 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/11/07 19:13:20 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "unistd.h"
+#include "string.h"
+#include "stdlib.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		main(void)
 {
-	size_t	i;
-	char	str[len];
-	char	*chrdst;
-	char	*chrsrc;
+	char	*a;
+	char	*b;
+	int		i;
 
+	a = ft_calloc(3, 4);
+	b = calloc(3, 4);
 	i = 0;
-	chrsrc = (char *)src;
-	while (i < len)
+	while (i < (3 * 4))
 	{
-		str[i] = *chrsrc;
+		if (a[i] != '\0')
+			write(1, "not zero", 8);
+		if (a[i] != b[i])
+			write(1, "not the same\n", 13);
+		else
+			write(1, "are the same\n", 13);
 		i++;
-		chrsrc++;
 	}
-	i = 0;
-	chrdst = (char *)dst;
-	while (i < len)
-	{
-		*chrdst = str[i];
-		i++;
-		chrdst++;
-	}
-	return (dst);
 }
