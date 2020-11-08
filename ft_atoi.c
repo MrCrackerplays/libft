@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:07:15 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/04 13:51:16 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/08 19:34:19 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 int	ft_atoi(const char *str)
 {
-	int		val;
-	int		i;
-	int		neg;
+	long int	val;
+	int			i;
+	int			neg;
 
 	i = 0;
 	val = 0;
-	neg = 0;
+	neg = 1;
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == ' ')
+		i++;
 	while (str[i] != '\0')
 	{
-		if (i == 0 && str[i] == '-')
-			neg++;
+		if (neg == 1 && str[i] == '-')
+			neg = -1;
 		else if (ft_isdigit(str[i]))
 		{
 			val *= 10;
@@ -34,7 +37,5 @@ int	ft_atoi(const char *str)
 			break ;
 		i++;
 	}
-	if (neg)
-		val = -val;
-	return (val);
+	return (val * neg);
 }

@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:09:39 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/04 12:36:53 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/08 19:34:54 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
-//errors
+	size_t	i;
+
 	i = 0;
-	while (i < dstsize)
+	while (i < dstsize && src[i] != 0)
 	{
 		dst[i] = src[i];
 		i++;

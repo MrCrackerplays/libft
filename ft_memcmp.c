@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 16:43:33 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/07 16:50:42 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/08 19:34:29 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*chrs1;
-	char	*chrs2;
-	size_t	i;
+	unsigned char	*chrs1;
+	unsigned char	*chrs2;
+	size_t			i;
 
-	chrs1 = (char *)s1;
-	chrs2 = (char *)s2;
+	chrs1 = (unsigned char *)s1;
+	chrs2 = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{

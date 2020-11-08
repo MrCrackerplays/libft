@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 16:26:07 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/06 14:59:33 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/08 17:16:08 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
+		if (dst == NULL && src == NULL)
+			return (NULL);
 		l[i] = r[i];
 		i++;
 	}
