@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 18:07:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/07 19:17:15 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/09 16:39:56 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	len = ft_strlen(s1);
-	if ((ptr = malloc(len + 1)) == NULL)
+	ptr = malloc(len + 1);
+	if (ptr == NULL)
 	{
 		errno = ENOMEM;
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 17:00:45 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/07 19:09:45 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/09 16:36:43 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*ptr;
 
 	i = 0;
-	if ((ptr = malloc(count * size)) == NULL)
+	ptr = malloc(count * size);
+	if (ptr == NULL)
 	{
 		errno = ENOMEM;
 		return (NULL);
