@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcpy.c                                       :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/28 15:09:39 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/11 12:36:19 by pdruart       ########   odam.nl         */
+/*   Created: 2020/11/11 17:15:57 by pdruart       #+#    #+#                 */
+/*   Updated: 2020/11/11 17:29:00 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	srclen;
+	char			*str;
+	unsigned int	i;
+	unsigned int	len1;
+	unsigned int	len2;
 
+	str = (char *)malloc(1);
+	if (str == NULL)
+		return (NULL);
 	i = 0;
-	if (dst == NULL || src == NULL)
-		return (0);
-	srclen = ft_strlen(src);
-	while (i < dstsize && src[i] != 0)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	while (i < len1 + len2)
 	{
-		dst[i] = src[i];
+		if (i < len1)
+			*(str + i) = *(s1 + i);
+		else
+			*(str + i) = *(s2 + i - len1);
 		i++;
 	}
-	if (dstsize != 0)
-		dst[srclen > dstsize ? i - 1 : i] = '\0';
-	return (ft_strlen(src));
+	return (str);
 }
