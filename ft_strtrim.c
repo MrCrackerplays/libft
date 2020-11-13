@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:30:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/11 19:11:21 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/13 14:43:31 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	str = malloc(end + 1 - start);
 	i = 0;
-	while (start < end)
+	while (start <= end)
 	{
 		*(str + i) = *(s1 + start);
 		start++;
