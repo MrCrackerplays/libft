@@ -6,7 +6,7 @@
 #    By: pdruart <pdruart@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/01 18:16:09 by pdruart       #+#    #+#                  #
-#    Updated: 2020/11/13 17:23:40 by pdruart       ########   odam.nl          #
+#    Updated: 2020/11/14 17:43:12 by pdruart       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ STR_MOD = ft_strlcpy.o ft_strlcat.o ft_tolower.o ft_toupper.o ft_bzero.o
 STR_INFO = ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strchr.o
 STR_MAKE = ft_strdup.o ft_calloc.o ft_atoi.o
 PART_ONE = $(CHAR_CHECKS) $(MEMS) $(STR_MOD) $(STR_INFO) $(STR_MAKE)
-NAME1 = ft_substr.o ft_strjoin.o ft_strtrim.o
-NAME2 = ft_split.o ft_itoa.o ft_strmapi.o
+PAGE1 = ft_substr.o ft_strjoin.o ft_strtrim.o
+PAGE2 = ft_split.o ft_itoa.o ft_strmapi.o
 PUTS = ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
-PART_TWO = $(NAME1) $(NAME2) $(PUTS)
+PART_TWO = $(PAGE1) $(PAGE2) $(PUTS)
 OBJ_FILES = $(PART_ONE) $(PART_TWO)
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Werror -Wextra

@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:30:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/13 14:43:31 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/14 17:53:04 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	i;
 
 	start = 0;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	while (*(s1 + start) != '\0')
 	{
 		if (contains(set, *(s1 + start)) == 0)

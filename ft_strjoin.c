@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:15:57 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/11 17:29:00 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/14 18:28:21 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	len1;
 	unsigned int	len2;
 
-	str = (char *)malloc(1);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	str = (char *)malloc(len1 + len2 + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
 	while (i < len1 + len2)
 	{
 		if (i < len1)
@@ -33,5 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			*(str + i) = *(s2 + i - len1);
 		i++;
 	}
+	*(str + i) = '\0';
 	return (str);
 }

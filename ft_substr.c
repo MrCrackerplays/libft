@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 14:48:53 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/11 17:15:22 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/14 18:13:47 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	unsigned int	i;
+	char	*str;
+	size_t	i;
 
-	str = (char *)malloc(len);
-	if (str == NULL)
+	str = (char *)malloc(len + 1);
+	if (s == NULL || str == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < len && start < ft_strlen(s))
 	{
 		*(str + i) = *(s + start + i);
 		i++;
 	}
+	*(str + i) = '\0';
 	return (str);
 }

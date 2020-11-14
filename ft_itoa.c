@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 16:32:40 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/13 19:16:40 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/14 15:46:59 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,22 @@ char	*ft_itoa(int n)
 	char	*rslt;
 	size_t	len;
 	size_t	i;
-//random abort bij deze
-	if (n == -2147483648)
-		return ("-2147483648\0");
+
 	len = num_len(n);
 	rslt = (char *)malloc(len + 1);
+	if (rslt == NULL)
+		return (NULL);
 	i = 1;
 	if (n < 0)
-	{
 		*(rslt) = '-';
-		n = -n;
-	}
 	if (n == 0)
 	{
 		*(rslt + len - i) = '0';
 		i++;
 	}
-	while (n > 0)
+	while (n != 0)
 	{
-		*(rslt + len - i) = '0' + (n % 10);
+		*(rslt + len - i) = '0' + ((n < 0 ? -1 : 1) * (n % 10));
 		n = n / 10;
 		i++;
 	}

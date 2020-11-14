@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 17:24:15 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/13 17:59:35 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/14 15:43:37 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	rslt = (char *)malloc(1 + ft_strlen(s));
 	if (rslt == NULL || f == NULL)
 		return (NULL);
@@ -26,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		*(rslt + i) = (*f)(i, *(s + i));
 		i++;
 	}
+	*(rslt + i) = '\0';
 	return (rslt);
 }
