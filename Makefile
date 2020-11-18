@@ -6,7 +6,7 @@
 #    By: pdruart <pdruart@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/01 18:16:09 by pdruart       #+#    #+#                  #
-#    Updated: 2020/11/18 14:21:32 by pdruart       ########   odam.nl          #
+#    Updated: 2020/11/18 19:34:21 by pdruart       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,15 @@ PAGE1 = ft_substr.o ft_strjoin.o ft_strtrim.o
 PAGE2 = ft_split.o ft_itoa.o ft_strmapi.o
 PUTS = ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 PART_TWO = $(PAGE1) $(PAGE2) $(PUTS)
-OBJ_FILES = $(PART_ONE) $(PART_TWO)
+PART_BONUS = ft_lstnew.o
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Werror -Wextra
+
+ifdef WITH_BONUS
+OBJ_FILES = $(PART_ONE) $(PART_TWO) $(PART_BONUS)
+else
+OBJ_FILES = $(PART_ONE) $(PART_TWO)
+endif
 
 all: $(NAME)
 
@@ -42,4 +48,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re main
+bonus:
+	$(MAKE) WITH_BONUS=1 all
+
+.PHONY: all clean fclean re bonus
