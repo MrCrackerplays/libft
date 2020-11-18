@@ -6,7 +6,7 @@
 #    By: pdruart <pdruart@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/01 18:16:09 by pdruart       #+#    #+#                  #
-#    Updated: 2020/11/14 17:43:12 by pdruart       ########   odam.nl          #
+#    Updated: 2020/11/18 13:54:27 by pdruart       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ PART_TWO = $(PAGE1) $(PAGE2) $(PUTS)
 OBJ_FILES = $(PART_ONE) $(PART_TWO)
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Werror -Wextra
-MAIN = main_memset.c
+MAIN = main_strncmp.c
 
 all: $(NAME)
 

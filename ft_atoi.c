@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:07:15 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/14 17:42:07 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/18 12:42:15 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 int	ft_atoi(const char *str)
 {
-	unsigned int	val;
-	int				i;
-	int				neg;
+	unsigned long long	val;
+	int					i;
+	int					pos;
 
 	i = 0;
 	val = 0;
-	neg = 1;
+	pos = 0;
 	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
 		|| str[i] == '\r' || str[i] == ' ')
 		i++;
 	while (str[i] != '\0')
 	{
-		if (neg == 1 && str[i] == '-')
-			neg = -1;
-		else if (neg == -1 && val > 2147483648l)
-			return (0);
-		else if (neg == 1 && val > 2147483647l)
-			return (-1);
-		else if (ft_isdigit(str[i]))
-			val = (val * 10) + (str[i] - '0');
-		else if (str[i] != '+')
+		if (pos == 0 && (str[i] == '-' || str[i] == '+'))
+			pos = (str[i] == '-') ? -1 : 1;
+		else if (ft_isdigit(str[i]) == 0)
 			break ;
+		else if (val > 922337203685477580ll
+			|| (val == 922337203685477580ll && str[i] > '7'))
+			return (pos == -1 ? 0 : -1);
+		else
+			val = (val * 10) + (str[i] - '0');
 		i++;
 	}
-	return (val * neg);
+	return (val * (pos < 0 ? -1 : 1));
 }

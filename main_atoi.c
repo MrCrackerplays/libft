@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:16:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/04 13:51:46 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/18 13:09:07 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(void)
 	int		b;
 	char	*num;
 
-	num = "-2147483648";
+	num = "-4886";
 	a = ft_atoi(num);
 	b = atoi(num);
 	if (a != b)
