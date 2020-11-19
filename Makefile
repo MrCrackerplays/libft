@@ -6,7 +6,7 @@
 #    By: pdruart <pdruart@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/01 18:16:09 by pdruart       #+#    #+#                  #
-#    Updated: 2020/11/18 19:34:21 by pdruart       ########   odam.nl          #
+#    Updated: 2020/11/19 14:42:19 by pdruart       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,10 @@ PAGE1 = ft_substr.o ft_strjoin.o ft_strtrim.o
 PAGE2 = ft_split.o ft_itoa.o ft_strmapi.o
 PUTS = ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 PART_TWO = $(PAGE1) $(PAGE2) $(PUTS)
-PART_BONUS = ft_lstnew.o
+BONUS_ONE = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o
+BONUS_TWO = ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o
+BONUS_THREE = ft_lstiter.o ft_lstmap.o
+PART_BONUS = $(BONUS_ONE) $(BONUS_TWO) $(BONUS_THREE)
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Werror -Wextra
 
