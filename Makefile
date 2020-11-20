@@ -6,7 +6,7 @@
 #    By: pdruart <pdruart@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/01 18:16:09 by pdruart       #+#    #+#                  #
-#    Updated: 2020/11/19 14:42:19 by pdruart       ########   odam.nl          #
+#    Updated: 2020/11/20 15:50:29 by pdruart       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ BONUS_THREE = ft_lstiter.o ft_lstmap.o
 PART_BONUS = $(BONUS_ONE) $(BONUS_TWO) $(BONUS_THREE)
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Werror -Wextra
+MAIN = main_lsttest.o
 
 ifdef WITH_BONUS
 OBJ_FILES = $(PART_ONE) $(PART_TWO) $(PART_BONUS)
@@ -54,4 +55,10 @@ re: fclean all
 bonus:
 	$(MAKE) WITH_BONUS=1 all
 
-.PHONY: all clean fclean re bonus
+so: $(OBJ_FILES)
+	$(LINK.c) $(CFLAGS) -o libft.so -shared $(OBJ_FILES) $(PART_BONUS)
+
+main: $(NAME) $(MAIN)
+	$(CC) $(CFLAGS) -o a.out $(MAIN) libft.a
+
+.PHONY: all clean fclean re bonus so main
