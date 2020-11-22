@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 16:22:43 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/01 17:27:01 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 11:07:59 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int	i;
-	unsigned int	a;
-	unsigned int	ndllen;
+	size_t	i;
+	size_t	a;
+	size_t	ndllen;
 
 	ndllen = ft_strlen(needle);
 	if (ndllen == 0)
