@@ -6,11 +6,12 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 16:32:40 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/14 15:46:59 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 13:47:20 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
 
 int		num_len(int n)
 {

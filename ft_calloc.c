@@ -6,12 +6,13 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 17:00:45 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/09 16:36:43 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 13:45:37 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "errno.h"
+#include "stdlib.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

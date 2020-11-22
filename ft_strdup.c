@@ -6,12 +6,13 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 18:07:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/09 16:39:56 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 13:46:22 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "errno.h"
+#include "stdlib.h"
 
 char	*ft_strdup(const char *s1)
 {

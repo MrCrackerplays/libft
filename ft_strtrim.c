@@ -6,11 +6,12 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:30:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/15 16:23:11 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 13:46:50 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
 
 int		contains(char const *set, char const chr)
 {

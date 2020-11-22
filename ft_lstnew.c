@@ -6,11 +6,12 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/18 19:37:03 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 11:53:48 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 13:48:13 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
 
 t_list	*ft_lstnew(void *content)
 {

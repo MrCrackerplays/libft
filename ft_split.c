@@ -6,11 +6,12 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 14:56:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/17 16:28:49 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 14:39:19 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
 
 size_t	ft_str_count(char const *s, char c)
 {
@@ -28,7 +29,7 @@ size_t	ft_str_count(char const *s, char c)
 	return (count);
 }
 
-int		doit(char const *s, size_t i, long *start, char ***arr)
+int		add_to_arr(char const *s, size_t i, long *start, char ***arr)
 {
 	char	*ptr;
 
@@ -43,10 +44,49 @@ int		doit(char const *s, size_t i, long *start, char ***arr)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+int		clean_up_arr(char ***arr, size_t wi)
 {
 	size_t	i;
+
+	i = 0;
+	while (i < wi)
+	{
+		free(*((*(arr - wi)) + i));
+		i++;
+	}
+	free(*arr);
+	return (1);
+}
+
+int		fill_arr(char const *s, char ***arr, char c)
+{
+	size_t	i;
+	size_t	wi;
 	long	start;
+
+	i = 0;
+	start = -1;
+	wi = 0;
+	while (*(s + i) != '\0')
+	{
+		if (start == -1 && *(s + i) != c)
+			start = i;
+		else if (start != -1 && *(s + i) == c)
+		{
+			if (add_to_arr(s, i, &start, arr) == 1)
+				return (clean_up_arr(arr, wi));
+			wi++;
+		}
+		i++;
+	}
+	if (start != -1 && add_to_arr(s, i, &start, arr) == 1)
+		return (clean_up_arr(arr, wi));
+	*(*arr) = NULL;
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
+{
 	char	**arr;
 	size_t	num;
 
@@ -56,18 +96,7 @@ char	**ft_split(char const *s, char c)
 	arr = (char **)malloc((num + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
-	i = 0;
-	start = -1;
-	while (*(s + i) != '\0')
-	{
-		if (start == -1 && *(s + i) != c)
-			start = i;
-		else if (start != -1 && *(s + i) == c && doit(s, i, &start, &arr) == 1)
-			return (NULL);
-		i++;
-	}
-	if (start != -1 && doit(s, i, &start, &arr) == 1)
+	if (fill_arr(s, &arr, c) == 1)
 		return (NULL);
-	*arr = NULL;
-	return ((arr - num));
+	return (arr - num);
 }
