@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/18 19:37:03 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/18 20:15:31 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/22 11:53:48 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
-	list = malloc(16);
+	list = malloc(sizeof(void *) + sizeof(t_list *));
 	if (list == NULL)
 		return (NULL);
 	list->content = content;
