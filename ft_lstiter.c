@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/19 13:54:42 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/19 13:58:31 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/25 11:41:08 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst == NULL)
 		return ;
-	ft_lstiter(lst->next, f);
 	(*f)(lst->content);
+	ft_lstiter(lst->next, f);
 }
