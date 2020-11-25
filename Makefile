@@ -6,7 +6,7 @@
 #    By: pdruart <pdruart@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/01 18:16:09 by pdruart       #+#    #+#                  #
-#    Updated: 2020/11/21 14:20:44 by pdruart       ########   odam.nl          #
+#    Updated: 2020/11/25 11:00:46 by pdruart       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,4 +56,4 @@ bonus:
 so: $(OBJ_FILES)
 	$(LINK.c) $(CFLAGS) -o libft.so -shared $(OBJ_FILES) $(PART_BONUS)
 
-.PHONY: all clean fclean re bonus so main
+.PHONY: all clean fclean re bonus so
