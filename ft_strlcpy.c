@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:09:39 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/11 12:36:19 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/28 13:03:06 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	if (dstsize != 0)
-		dst[srclen > dstsize ? i - 1 : i] = '\0';
+		dst[srclen >= dstsize ? i - 1 : i] = '\0';
 	return (ft_strlen(src));
 }
