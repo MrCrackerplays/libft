@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 16:43:33 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/08 19:34:29 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/29 10:55:36 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (*chrs1 != *chrs2)
-		{
 			return (*chrs1 - *chrs2);
-		}
 		i++;
 		chrs1++;
 		chrs2++;

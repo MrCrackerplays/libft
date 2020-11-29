@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 14:48:53 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 13:46:35 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/29 11:10:10 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		*(str + i) = *(s + start + i);
+		str[i] = s[start + i];
 		i++;
 	}
-	*(str + i) = '\0';
+	str[i] = '\0';
 	return (str);
 }

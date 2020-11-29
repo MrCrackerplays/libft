@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 16:32:40 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 13:47:20 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/29 11:03:19 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ char	*ft_itoa(int n)
 		*(rslt) = '-';
 	if (n == 0)
 	{
-		*(rslt + len - i) = '0';
+		rslt[len - i] = '0';
 		i++;
 	}
 	while (n != 0)
 	{
-		*(rslt + len - i) = '0' + ((n < 0 ? -1 : 1) * (n % 10));
+		rslt[len - i] = '0' + ((n < 0 ? -1 : 1) * (n % 10));
 		n = n / 10;
 		i++;
 	}
-	*(rslt + len) = '\0';
+	rslt[len] = '\0';
 	return (rslt);
 }

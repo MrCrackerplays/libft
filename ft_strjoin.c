@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:15:57 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 13:46:54 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/29 11:07:55 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (i < len1 + len2)
 	{
 		if (i < len1)
-			*(str + i) = *(s1 + i);
+			str[i] = s1[i];
 		else
-			*(str + i) = *(s2 + i - len1);
+			str[i] = s2[i - len1];
 		i++;
 	}
-	*(str + i) = '\0';
+	str[i] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 17:24:15 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 13:47:30 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/29 11:08:57 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	rslt = (char *)malloc(1 + ft_strlen(s));
 	if (rslt == NULL || f == NULL)
 		return (NULL);
-	while (*(s + i) != '\0')
+	while (s[i] != '\0')
 	{
-		*(rslt + i) = (*f)(i, *(s + i));
+		rslt[i] = f(i, s[i]);
 		i++;
 	}
-	*(rslt + i) = '\0';
+	rslt[i] = '\0';
 	return (rslt);
 }

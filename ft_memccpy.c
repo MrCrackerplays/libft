@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 16:26:07 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/14 16:03:43 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/11/29 10:55:19 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		l[i] = r[i];
 		if (r[i] == (unsigned char)c)
-		{
 			return (&(l[i + 1]));
-		}
 		i++;
 	}
 	return (NULL);
