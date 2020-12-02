@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 14:48:53 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/29 11:10:10 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/12/02 12:47:59 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	else if (start + len > slen)
 		len = slen - start;
-	str = (char *)malloc(len + 1);
+	str = malloc(len + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:15:57 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/29 11:07:55 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/12/02 12:47:10 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	str = (char *)malloc(len1 + len2 + 1);
+	str = malloc(len1 + len2 + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

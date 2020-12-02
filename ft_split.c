@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 14:56:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 14:39:19 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/12/02 12:46:59 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		add_to_arr(char const *s, size_t i, long *start, char ***arr)
 {
 	char	*ptr;
 
-	ptr = (char *)malloc(i - *start + 1);
+	ptr = malloc(i - *start + 1);
 	if (ptr == NULL)
 		return (1);
 	ft_memmove(ptr, (s + *start), i - *start);
@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	num = ft_str_count(s, c);
-	arr = (char **)malloc((num + 1) * sizeof(char *));
+	arr = malloc((num + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	if (fill_arr(s, &arr, c) == 1)
