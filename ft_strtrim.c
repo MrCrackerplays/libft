@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:30:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 13:46:50 by pdruart       ########   odam.nl         */
+/*   Updated: 2020/12/02 11:16:09 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int		contains(char const *set, char const chr)
 	unsigned int	i;
 
 	i = 0;
-	while (*(set + i) != '\0')
+	while (set[i] != '\0')
 	{
-		if (*(set + i) == chr)
+		if (set[i] == chr)
 			return (1);
 		i++;
 	}
@@ -39,12 +39,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*str != '\0' && contains(set, *str) != 0)
 		str++;
 	end = ft_strlen(str);
-	while (end > 0 && contains(set, *(str + end - 1)) != 0)
+	while (end > 0 && contains(set, str[end - 1]) != 0)
 		end--;
 	ptr = malloc(end + 1);
 	if (ptr == NULL)
 		return (NULL);
 	ft_memmove(ptr, str, end);
-	*(ptr + end) = '\0';
+	ptr[end] = '\0';
 	return (ptr);
 }
