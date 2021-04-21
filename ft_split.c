@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 14:56:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/12/02 12:46:59 by pdruart       ########   odam.nl         */
+/*   Updated: 2021/04/21 16:41:04 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_str_count(char const *s, char c)
 	return (count);
 }
 
-int		add_to_arr(char const *s, size_t i, long *start, char ***arr)
+int	add_to_arr(char const *s, size_t i, long *start, char ***arr)
 {
 	char	*ptr;
 
@@ -44,7 +44,7 @@ int		add_to_arr(char const *s, size_t i, long *start, char ***arr)
 	return (0);
 }
 
-int		clean_up_arr(char ***arr, size_t wi)
+int	clean_up_arr(char ***arr, size_t wi)
 {
 	size_t	i;
 
@@ -58,7 +58,7 @@ int		clean_up_arr(char ***arr, size_t wi)
 	return (1);
 }
 
-int		fill_arr(char const *s, char ***arr, char c)
+int	fill_arr(char const *s, char ***arr, char c)
 {
 	size_t	i;
 	size_t	wi;

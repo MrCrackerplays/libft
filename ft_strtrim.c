@@ -6,14 +6,14 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 17:30:02 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/12/02 11:16:09 by pdruart       ########   odam.nl         */
+/*   Updated: 2021/04/21 16:44:54 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-int		contains(char const *set, char const chr)
+int	contains(char const *set, char const chr)
 {
 	unsigned int	i;
 

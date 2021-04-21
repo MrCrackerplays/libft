@@ -6,14 +6,14 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 16:32:40 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/29 11:03:19 by pdruart       ########   odam.nl         */
+/*   Updated: 2021/04/21 16:38:15 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-int		num_len(int n)
+int	num_len(int n)
 {
 	int		i;
 	int		add;
@@ -37,6 +37,13 @@ int		num_len(int n)
 	return (i + add);
 }
 
+int	get_negative_mult(int num)
+{
+	if (num < 0)
+		return (-1);
+	return (1);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*rslt;
@@ -57,7 +64,7 @@ char	*ft_itoa(int n)
 	}
 	while (n != 0)
 	{
-		rslt[len - i] = '0' + ((n < 0 ? -1 : 1) * (n % 10));
+		rslt[len - i] = '0' + (get_negative_mult(n) * (n % 10));
 		n = n / 10;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 14:21:23 by pdruart       #+#    #+#                 */
-/*   Updated: 2020/11/22 13:45:30 by pdruart       ########   odam.nl         */
+/*   Updated: 2021/04/21 16:45:40 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include "stddef.h"
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
