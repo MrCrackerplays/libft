@@ -6,7 +6,7 @@
 /*   By: pdruart <pdruart@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 15:58:29 by pdruart       #+#    #+#                 */
-/*   Updated: 2021/04/21 16:51:33 by pdruart       ########   odam.nl         */
+/*   Updated: 2021/12/13 12:06:57 by pdruart       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst == NULL && src == NULL)
 		return (NULL);
 	i = 0;
-	overlap = src < dst && dst <= src + len;
+	overlap = (src < dst && dst <= src + len);
 	chrsrc = (char *)src;
 	chrdst = (char *)dst;
 	while (i < len)
